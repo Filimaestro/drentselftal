@@ -3,25 +3,99 @@
   import FormationSelector from './components/FormationSelector.svelte';
   import PlayerCard from './components/PlayerCard.svelte';
   import ClubSearch from './components/ClubSearch.svelte';
+
+  type Formation = '4-4-2' | '4-3-3' | '3-5-2' | '5-3-2' | '4-2-3-1';
+
+  let currentFormation: Formation = '4-4-2';
+
+  function handleFormationChange(event: CustomEvent<{ formation: Formation }>) {
+    currentFormation = event.detail.formation;
+  }
+
+  // Define player positions based on formation
+  const playerPositions: Record<Formation, Array<{ position: string }>> = {
+    '4-4-2': [
+      { position: 'GK' },
+      { position: 'LB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'RB' },
+      { position: 'LM' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'RM' },
+      { position: 'ST' },
+      { position: 'ST' }
+    ],
+    '4-3-3': [
+      { position: 'GK' },
+      { position: 'LB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'RB' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'LW' },
+      { position: 'ST' },
+      { position: 'RW' }
+    ],
+    '3-5-2': [
+      { position: 'GK' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'LM' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'RM' },
+      { position: 'ST' },
+      { position: 'ST' }
+    ],
+    '5-3-2': [
+      { position: 'GK' },
+      { position: 'LB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'RB' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'ST' },
+      { position: 'ST' }
+    ],
+    '4-2-3-1': [
+      { position: 'GK' },
+      { position: 'LB' },
+      { position: 'CB' },
+      { position: 'CB' },
+      { position: 'RB' },
+      { position: 'CM' },
+      { position: 'CM' },
+      { position: 'LW' },
+      { position: 'CAM' },
+      { position: 'RW' },
+      { position: 'ST' }
+    ]
+  };
 </script>
 
 <main>
   <h1>Drents Elftal</h1>
   <div class="container">
-    <FormationSelector />
-    <FootballPitch />
+    <FormationSelector 
+      selectedFormation={currentFormation}
+      on:formationChange={handleFormationChange}
+    />
+    <FootballPitch formation={currentFormation} />
     <div class="player-list">
-      <PlayerCard position="GK" />
-      <PlayerCard position="LB" />
-      <PlayerCard position="CB" />
-      <PlayerCard position="CB" />
-      <PlayerCard position="RB" />
-      <PlayerCard position="LM" />
-      <PlayerCard position="CM" />
-      <PlayerCard position="CM" />
-      <PlayerCard position="RM" />
-      <PlayerCard position="ST" />
-      <PlayerCard position="ST" />
+      {#each playerPositions[currentFormation] as player}
+        <PlayerCard 
+          position={player.position}
+        />
+      {/each}
     </div>
   </div>
 </main>
@@ -37,6 +111,7 @@
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
+    font-size: 2.5rem;
   }
 
   .container {

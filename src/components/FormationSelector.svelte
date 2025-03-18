@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
   // Common football formations
   const formations = [
     { id: '4-4-2', name: '4-4-2' },
@@ -8,12 +12,12 @@
     { id: '4-2-3-1', name: '4-2-3-1' }
   ];
 
-  let selectedFormation = '4-4-2';
+  export let selectedFormation = '4-4-2';
 
   function handleFormationChange(event: Event) {
     const select = event.target as HTMLSelectElement;
     selectedFormation = select.value;
-    // Emit change event (will be implemented later)
+    dispatch('formationChange', { formation: selectedFormation });
   }
 </script>
 
@@ -44,5 +48,18 @@
     padding: 0.5rem;
     border-radius: 4px;
     border: 1px solid #ccc;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  select:hover {
+    border-color: #666;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #2c8a2c;
+    box-shadow: 0 0 0 2px rgba(44, 138, 44, 0.2);
   }
 </style> 
