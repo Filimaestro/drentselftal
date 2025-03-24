@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: #2c8a00;
+      }
+
+      .cls-4 {
+        fill: #1f7601;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="-23.81" y="-27.9" width="1249.04" height="1660.52"/>
+  <rect class="cls-3" x="-23.81" y="18.91" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="228.32" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="435.26" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="642.42" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="849.17" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="1059.98" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="1265.7" width="1252.78" height="104.71"/>
+  <rect class="cls-3" x="-23.81" y="1474.49" width="1252.78" height="104.71"/>
+  <rect class="cls-2" x="90.76" y="20.14" width="1008.88" height="1555.81"/>
+  <path class="cls-2" d="M88.96,41.37s22.8-.58,22.8-22.8"/>
+  <path class="cls-2" d="M1099.35,41.37s-22.8-.58-22.8-22.8"/>
+  <path class="cls-2" d="M88.96,1552.35s22.8.58,22.8,22.8"/>
+  <path class="cls-2" d="M1099.35,1552.35s-22.8.58-22.8,22.8"/>
+  <rect class="cls-2" x="295.65" y="20.27" width="593.61" height="242"/>
+  <rect class="cls-2" x="458.86" y="20.5" width="267.18" height="77.44"/>
+  <path class="cls-2" d="M491.28,262.28s26.83,49.19,97.26,49.19,109.56-50.31,109.56-50.31"/>
+  <g>
+    <rect class="cls-2" x="294.77" y="1332.8" width="593.61" height="242"/>
+    <rect class="cls-2" x="457.98" y="1497.14" width="267.18" height="78.1"/>
+    <path class="cls-2" d="M490.4,1332.8s26.83-49.19,97.26-49.19,109.56,50.31,109.56,50.31"/>
+  </g>
+  <line class="cls-2" x1="90.49" y1="797.35" x2="1098.89" y2="797.35"/>
+  <circle class="cls-2" cx="597.52" cy="798.66" r="162.29"/>
+  <circle class="cls-1" cx="599.93" cy="796.77" r="11.2"/>
+</svg>
